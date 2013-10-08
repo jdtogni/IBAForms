@@ -44,10 +44,11 @@
 - (id)initWithFrame:(CGRect)aRect {
 	if ((self = [super initWithFrame:(CGRect)aRect])) {
         UIColor *tintColor = [UIColor blackColor];
-		self.barStyle = UIBarStyleBlack;
         if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
             tintColor = nil;
             self.barStyle = UIBarStyleDefault;
+        } else {
+            self.barStyle = UIBarStyleBlack;
         }
 
 		doneButton_ = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
@@ -57,8 +58,7 @@
 		nextPreviousButton_ = [[UISegmentedControl alloc] initWithItems:[NSArray 
 					arrayWithObjects:IBAInputNavigationToolbarPreviousTitle, IBAInputNavigationToolbarNextTitle, nil]];
 		nextPreviousButton_.segmentedControlStyle = UISegmentedControlStyleBar;
-        if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
-        } else {
+        if (tintColor) {
             nextPreviousButton_.tintColor = [UIColor blackColor];
         }
 		nextPreviousButton_.momentary = YES;

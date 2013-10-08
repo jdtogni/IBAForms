@@ -42,6 +42,7 @@
 @synthesize formDataSource = formDataSource_;
 @synthesize keyboardFrame = keyboardFrame_;
 
+
 #pragma mark -
 #pragma mark Initialisation and memory management
 
@@ -276,6 +277,7 @@
 																									   toView:[[UIApplication sharedApplication] keyWindow]]];
 		CGFloat height = CGRectEqualToRect(coveringFrame, CGRectZero) ? 0 : coveringFrame.size.height - (normalisedWindowBounds.size.height - CGRectGetMaxY(normalisedTableViewFrame));
 		UIEdgeInsets contentInsets = UIEdgeInsetsMake(0, 0, height, 0);
+		self.tableView.scrollIndicatorInsets = contentInsets;
         
         // iOS7 changed bar handling, making view to go under the nav bar. To prevent this we have to force views to move down
         if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
@@ -283,12 +285,11 @@
             float statusBarHeight = MIN(app.statusBarFrame.size.width, app.statusBarFrame.size.height);
             float navBarHeight = self.navigationController.navigationBar.frame.size.height;
             float offsetY = statusBarHeight+navBarHeight;
-            contentInsets = UIEdgeInsetsMake(offsetY, 0, height+offsetY, 0);
+            contentInsets = UIEdgeInsetsMake(offsetY, 0, height-offsetY, 0);
         }
         
 		// NSLog(@"UIEdgeInsets contentInsets bottom %f", contentInsets.bottom);
 		self.tableView.contentInset = contentInsets;
-		self.tableView.scrollIndicatorInsets = contentInsets;
 	}
 }
 
