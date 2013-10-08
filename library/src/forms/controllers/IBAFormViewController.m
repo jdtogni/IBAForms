@@ -276,6 +276,16 @@
 																									   toView:[[UIApplication sharedApplication] keyWindow]]];
 		CGFloat height = CGRectEqualToRect(coveringFrame, CGRectZero) ? 0 : coveringFrame.size.height - (normalisedWindowBounds.size.height - CGRectGetMaxY(normalisedTableViewFrame));
 		UIEdgeInsets contentInsets = UIEdgeInsetsMake(0, 0, height, 0);
+        
+        // iOS7 changed bar handling, making view to go under the nav bar. To prevent this we have to force views to move down
+        if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
+            UIApplication *app = [UIApplication sharedApplication];
+            float statusBarHeight = MIN(app.statusBarFrame.size.width, app.statusBarFrame.size.height);
+            float navBarHeight = self.navigationController.navigationBar.frame.size.height;
+            float offsetY = statusBarHeight+navBarHeight;
+            contentInsets = UIEdgeInsetsMake(offsetY, 0, height+offsetY, 0);
+        }
+        
 		// NSLog(@"UIEdgeInsets contentInsets bottom %f", contentInsets.bottom);
 		self.tableView.contentInset = contentInsets;
 		self.tableView.scrollIndicatorInsets = contentInsets;
@@ -300,12 +310,12 @@
 - (void)presentModalViewController:(NSNotification *)notification {
 	UIViewController *viewController = [[notification userInfo] objectForKey:IBAViewControllerKey];
 	if (viewController != nil) {
-		[self presentModalViewController:viewController animated:YES];
+		[self presentViewController:viewController animated:YES completion:nil];
 	}
 }
 
 - (void)dismissModalViewController:(NSNotification *)notification; {
-	[self dismissModalViewControllerAnimated:YES];
+	[self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark -

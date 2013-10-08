@@ -48,7 +48,10 @@
 	if ((self = [super init])) {
 		providerView_ = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 216)];
 		providerView_.autoresizingMask = UIViewAutoresizingFlexibleHeight;
-		providerView_.backgroundColor = [UIColor viewFlipsideBackgroundColor];
+        if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
+        } else {
+            providerView_.backgroundColor = [UIColor viewFlipsideBackgroundColor];
+        }
 		
 		pickerView_ = [[UIPickerView alloc] initWithFrame:[providerView_ bounds]];
 		pickerView_.showsSelectionIndicator = YES;
@@ -115,9 +118,12 @@
 		label = (UILabel *)view;
 	} else {
 		label = [[[UILabel alloc] initWithFrame:CGRectMake(0, 0, pickerView.bounds.size.width - 40, 44)] autorelease];
-		label.backgroundColor = [UIColor clearColor];
-		label.shadowColor = [UIColor whiteColor];
-		label.shadowOffset = CGSizeMake(0, 1);
+        if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
+        } else {
+            label.backgroundColor = [UIColor clearColor];
+            label.shadowColor = [UIColor whiteColor];
+            label.shadowOffset = CGSizeMake(0, 1);
+        }
 	}
 	
 	id<IBAPickListOption> pickListOption = [self.pickListOptions objectAtIndex:row];

@@ -53,7 +53,7 @@
 		self.label = [[[UILabel alloc] initWithFrame:style.labelFrame] autorelease];
 		self.label.autoresizingMask = style.labelAutoresizingMask;
 		self.label.adjustsFontSizeToFitWidth = YES;
-		self.label.minimumFontSize = 10;
+		self.label.minimumScaleFactor = 10;
 		[self.cellView addSubview:self.label];
 
 		// set the style after the views have been created
@@ -84,18 +84,23 @@
 	}
 }
 
+- (void) applyDefaultStyle {
+	self.label.backgroundColor = [UIColor clearColor];
+    self.backgroundColor = self.formFieldStyle.labelBackgroundColor;
+}
+
 - (void)applyFormFieldStyle {
 	self.label.font = self.formFieldStyle.labelFont;
 	self.label.textColor = self.formFieldStyle.labelTextColor;
 	self.label.textAlignment = self.formFieldStyle.labelTextAlignment;
-	self.label.backgroundColor = self.formFieldStyle.labelBackgroundColor;
+    self.label.backgroundColor = [UIColor clearColor];
 	self.backgroundColor = self.formFieldStyle.labelBackgroundColor;
-
+    
 	self.styleApplied = YES;
 }
 
 - (void)applyActiveStyle {
-	self.label.backgroundColor = self.formFieldStyle.activeColor;
+	self.label.backgroundColor = [UIColor clearColor];
 	self.backgroundColor = self.formFieldStyle.activeColor;
 }
 
@@ -104,6 +109,8 @@
 		// We need to reapply the active style because the tableview has a nasty habbit of resetting the cell background 
 		// when the cell is reattached to the view hierarchy.
 		[self applyActiveStyle]; 
+	} else {
+        [self applyDefaultStyle];
 	}
 }
 

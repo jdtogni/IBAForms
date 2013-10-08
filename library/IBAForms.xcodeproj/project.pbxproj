@@ -68,6 +68,10 @@
 		753A7EFD13B36BCF003931DA /* IBATitleFormField.m in Sources */ = {isa = PBXBuildFile; fileRef = 753A7EFB13B36BCF003931DA /* IBATitleFormField.m */; };
 		952FAB8014F20936006213AA /* IBATextFormField+Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = 952FAB7E14F20936006213AA /* IBATextFormField+Factory.m */; };
 		952FAB8214F32DA8006213AA /* IBATextFormField+Factory.h in Headers */ = {isa = PBXBuildFile; fileRef = 952FAB8114F32DA8006213AA /* IBATextFormField+Factory.h */; };
+		9AE29F2A18038182003E02E3 /* IBAReadOnlyTextViewFormField.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AE29F2618038182003E02E3 /* IBAReadOnlyTextViewFormField.m */; };
+		9AE29F2C18038182003E02E3 /* IBATextViewFormFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AE29F2818038182003E02E3 /* IBATextViewFormFieldCell.m */; };
+		9AE29F2F180381D5003E02E3 /* IBAReadOnlyTextViewFormField.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AE29F2D180381D5003E02E3 /* IBAReadOnlyTextViewFormField.h */; };
+		9AE29F30180381D5003E02E3 /* IBATextViewFormFieldCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AE29F2E180381D5003E02E3 /* IBATextViewFormFieldCell.h */; };
 		AA747D9F0F9514B9006C5449 /* IBAForms_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* IBAForms_Prefix.pch */; settings = {ATTRIBUTES = (); }; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
 /* End PBXBuildFile section */
@@ -134,6 +138,10 @@
 		753A7EFB13B36BCF003931DA /* IBATitleFormField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBATitleFormField.m; sourceTree = "<group>"; };
 		952FAB7E14F20936006213AA /* IBATextFormField+Factory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "IBATextFormField+Factory.m"; path = "categories/IBATextFormField+Factory.m"; sourceTree = "<group>"; };
 		952FAB8114F32DA8006213AA /* IBATextFormField+Factory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IBATextFormField+Factory.h"; sourceTree = "<group>"; };
+		9AE29F2618038182003E02E3 /* IBAReadOnlyTextViewFormField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBAReadOnlyTextViewFormField.m; sourceTree = "<group>"; };
+		9AE29F2818038182003E02E3 /* IBATextViewFormFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBATextViewFormFieldCell.m; sourceTree = "<group>"; };
+		9AE29F2D180381D5003E02E3 /* IBAReadOnlyTextViewFormField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBAReadOnlyTextViewFormField.h; sourceTree = "<group>"; };
+		9AE29F2E180381D5003E02E3 /* IBATextViewFormFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBATextViewFormFieldCell.h; sourceTree = "<group>"; };
 		AA747D9E0F9514B9006C5449 /* IBAForms_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBAForms_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2AAC07E0554694100DB518D /* libIBAForms.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libIBAForms.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -230,6 +238,8 @@
 		7512409013A8F6BE007BF2B5 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				9AE29F2618038182003E02E3 /* IBAReadOnlyTextViewFormField.m */,
+				9AE29F2818038182003E02E3 /* IBATextViewFormFieldCell.m */,
 				7512409113A8F6BE007BF2B5 /* IBABooleanSwitchCell.m */,
 				7512409213A8F6BE007BF2B5 /* IBADateFormFieldCell.m */,
 				7512409313A8F6BE007BF2B5 /* IBAFormFieldCell.m */,
@@ -279,6 +289,8 @@
 		751240B913A8F6CF007BF2B5 /* IBAForms */ = {
 			isa = PBXGroup;
 			children = (
+				9AE29F2D180381D5003E02E3 /* IBAReadOnlyTextViewFormField.h */,
+				9AE29F2E180381D5003E02E3 /* IBATextViewFormFieldCell.h */,
 				751240BA13A8F6CF007BF2B5 /* IBABooleanFormField.h */,
 				751240BB13A8F6CF007BF2B5 /* IBABooleanSwitchCell.h */,
 				751240BC13A8F6CF007BF2B5 /* IBAButtonFormField.h */,
@@ -336,8 +348,10 @@
 				AA747D9F0F9514B9006C5449 /* IBAForms_Prefix.pch in Headers */,
 				751240DD13A8F6CF007BF2B5 /* IBABooleanFormField.h in Headers */,
 				751240DE13A8F6CF007BF2B5 /* IBABooleanSwitchCell.h in Headers */,
+				9AE29F2F180381D5003E02E3 /* IBAReadOnlyTextViewFormField.h in Headers */,
 				751240DF13A8F6CF007BF2B5 /* IBAButtonFormField.h in Headers */,
 				751240E013A8F6CF007BF2B5 /* IBACommon.h in Headers */,
+				9AE29F30180381D5003E02E3 /* IBATextViewFormFieldCell.h in Headers */,
 				751240E113A8F6CF007BF2B5 /* IBADateFormField.h in Headers */,
 				751240E213A8F6CF007BF2B5 /* IBADateFormFieldCell.h in Headers */,
 				751240E313A8F6CF007BF2B5 /* IBADateInputProvider.h in Headers */,
@@ -398,7 +412,7 @@
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0430;
+				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Itty Bitty Apps Pty Ltd";
 			};
 			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "IBAForms" */;
@@ -437,6 +451,7 @@
 				751240A713A8F6BE007BF2B5 /* IBAInputRequestorFormField.m in Sources */,
 				751240A813A8F6BE007BF2B5 /* IBALabelFormField.m in Sources */,
 				751240AA13A8F6BE007BF2B5 /* IBAPickListFormField.m in Sources */,
+				9AE29F2A18038182003E02E3 /* IBAReadOnlyTextViewFormField.m in Sources */,
 				751240AB13A8F6BE007BF2B5 /* IBAReadOnlyTextFormField.m in Sources */,
 				751240AC13A8F6BE007BF2B5 /* IBATextFormField.m in Sources */,
 				751240AD13A8F6BE007BF2B5 /* IBABooleanSwitchCell.m in Sources */,
@@ -450,6 +465,7 @@
 				751240B513A8F6BE007BF2B5 /* IBASinglePickListInputProvider.m in Sources */,
 				751240B613A8F6BE007BF2B5 /* IBATextInputProvider.m in Sources */,
 				751240B713A8F6BE007BF2B5 /* IBAInputNavigationToolbar.m in Sources */,
+				9AE29F2C18038182003E02E3 /* IBATextViewFormFieldCell.m in Sources */,
 				753A7EFD13B36BCF003931DA /* IBATitleFormField.m in Sources */,
 				952FAB8014F20936006213AA /* IBATextFormField+Factory.m in Sources */,
 			);
@@ -462,7 +478,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = NO;
 				DSTROOT = /tmp/IBAForms.dst;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -470,7 +485,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = IBAForms_Prefix.pch;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRIVATE_HEADERS_FOLDER_PATH = "";
 				PRODUCT_NAME = IBAForms;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -481,12 +496,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				DSTROOT = /tmp/IBAForms.dst;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = IBAForms_Prefix.pch;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRIVATE_HEADERS_FOLDER_PATH = "";
 				PRODUCT_NAME = IBAForms;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -496,13 +510,23 @@
 		1DEB922308733DC00010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
@@ -513,11 +537,21 @@
 		1DEB922408733DC00010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;

@@ -43,16 +43,24 @@
 
 - (id)initWithFrame:(CGRect)aRect {
 	if ((self = [super initWithFrame:(CGRect)aRect])) {
+        UIColor *tintColor = [UIColor blackColor];
 		self.barStyle = UIBarStyleBlack;
-		
-		doneButton_ = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone 
+        if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
+            tintColor = nil;
+            self.barStyle = UIBarStyleDefault;
+        }
+
+		doneButton_ = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
 																   target:nil 
 																   action:nil];
 		
 		nextPreviousButton_ = [[UISegmentedControl alloc] initWithItems:[NSArray 
 					arrayWithObjects:IBAInputNavigationToolbarPreviousTitle, IBAInputNavigationToolbarNextTitle, nil]];
 		nextPreviousButton_.segmentedControlStyle = UISegmentedControlStyleBar;
-		nextPreviousButton_.tintColor = [UIColor blackColor];
+        if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
+        } else {
+            nextPreviousButton_.tintColor = [UIColor blackColor];
+        }
 		nextPreviousButton_.momentary = YES;
 		
 		nextPreviousBarButtonItem_ = [[UIBarButtonItem alloc] initWithCustomView:self.nextPreviousButton];
