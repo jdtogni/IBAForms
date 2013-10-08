@@ -43,7 +43,8 @@
 #import <IBAForms/IBAReadOnlyTextFormField.h>
 #import <IBAForms/IBATextFormField.h>
 #import <IBAForms/IBATextFormFieldCell.h>
+#import <IBAForms/IBATextViewFormFieldCell.h>
+#import <IBAForms/IBAReadOnlyTextViewFormField.h>
 #import <IBAForms/IBATextInputProvider.h>
 #import <IBAForms/IBATitleFormField.h>
 #import <IBAForms/IBATextFormField+Factory.h>
-
