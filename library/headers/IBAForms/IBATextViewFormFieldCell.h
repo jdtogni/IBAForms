@@ -12,7 +12,7 @@
 // permissions and limitations under the License.
 //
 
-#import <IBAForms/IBAForms.h>
+#import "IBAFormFieldCell.h"
 
 
 @interface IBATextViewFormFieldCell : IBAFormFieldCell {

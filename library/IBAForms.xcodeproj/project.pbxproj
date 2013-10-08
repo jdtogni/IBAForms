@@ -138,6 +138,7 @@
 		753A7EFB13B36BCF003931DA /* IBATitleFormField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBATitleFormField.m; sourceTree = "<group>"; };
 		952FAB7E14F20936006213AA /* IBATextFormField+Factory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "IBATextFormField+Factory.m"; path = "categories/IBATextFormField+Factory.m"; sourceTree = "<group>"; };
 		952FAB8114F32DA8006213AA /* IBATextFormField+Factory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IBATextFormField+Factory.h"; sourceTree = "<group>"; };
+		9A666D15180383BD0022E258 /* IBAForms.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = IBAForms.podspec; path = ../IBAForms.podspec; sourceTree = "<group>"; };
 		9AE29F2618038182003E02E3 /* IBAReadOnlyTextViewFormField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBAReadOnlyTextViewFormField.m; sourceTree = "<group>"; };
 		9AE29F2818038182003E02E3 /* IBATextViewFormFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBATextViewFormFieldCell.m; sourceTree = "<group>"; };
 		9AE29F2D180381D5003E02E3 /* IBAReadOnlyTextViewFormField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBAReadOnlyTextViewFormField.h; sourceTree = "<group>"; };
@@ -170,6 +171,7 @@
 		0867D691FE84028FC02AAC07 /* IBAForms */ = {
 			isa = PBXGroup;
 			children = (
+				9A666D15180383BD0022E258 /* IBAForms.podspec */,
 				7512407F13A8F6BE007BF2B5 /* src */,
 				751240B813A8F6CF007BF2B5 /* headers */,
 				32C88DFF0371C24200C91783 /* Other Sources */,
