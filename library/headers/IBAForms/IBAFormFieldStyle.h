@@ -31,7 +31,7 @@
 
 	UIColor *activeColor_;
     
-    UIKeyboardType keybardType_;
+    UIKeyboardType keyboardType_;
     UITextAutocapitalizationType autocapitalizationType_;
 }
 
@@ -51,7 +51,7 @@
 
 @property (nonatomic, retain) UIColor *activeColor;
 
-@property (nonatomic, assign) UIKeyboardType keybardType;
+@property (nonatomic, assign) UIKeyboardType keyboardType;
 @property (nonatomic, assign) UITextAutocapitalizationType autocapitalizationType;
 
 @end
