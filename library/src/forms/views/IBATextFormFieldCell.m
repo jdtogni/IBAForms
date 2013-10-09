@@ -52,6 +52,8 @@
 	self.textField.textColor = self.formFieldStyle.valueTextColor;
 	self.textField.backgroundColor = self.formFieldStyle.valueBackgroundColor;
 	self.textField.textAlignment = self.formFieldStyle.valueTextAlignment;
+    self.textField.keyboardType = self.formFieldStyle.keybardType;
+    self.textField.autocapitalizationType = self.formFieldStyle.autocapitalizationType;
 }
 
 @end

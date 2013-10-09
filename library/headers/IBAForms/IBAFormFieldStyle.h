@@ -30,6 +30,9 @@
 	UIViewAutoresizing valueAutoresizingMask_;
 
 	UIColor *activeColor_;
+    
+    UIKeyboardType keybardType_;
+    UITextAutocapitalizationType autocapitalizationType_;
 }
 
 @property (nonatomic, retain) UIColor *labelTextColor;
@@ -47,5 +50,8 @@
 @property (nonatomic, assign) UIViewAutoresizing valueAutoresizingMask;
 
 @property (nonatomic, retain) UIColor *activeColor;
+
+@property (nonatomic, assign) UIKeyboardType keybardType;
+@property (nonatomic, assign) UITextAutocapitalizationType autocapitalizationType;
 
 @end

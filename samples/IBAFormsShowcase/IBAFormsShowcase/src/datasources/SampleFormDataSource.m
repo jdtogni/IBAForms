@@ -25,6 +25,12 @@
 		IBAFormSection *basicFieldSection = [self addSectionWithHeaderTitle:@"Basic Form Fields" footerTitle:nil];
 
 		[basicFieldSection addFormField:[[[IBATextFormField alloc] initWithKeyPath:@"text" title:@"Text"] autorelease]];
+
+        IBATextFormField *url = [[[IBATextFormField alloc] initWithKeyPath:@"url" title:@"URL"] autorelease];
+		[basicFieldSection addFormField:url];
+        url.formFieldStyle.autocapitalizationType = UITextAutocapitalizationTypeNone;
+        url.formFieldStyle.keybardType = UIKeyboardTypeURL;
+        
 		[IBATextFormField passwordTextFormFieldWithSection:basicFieldSection keyPath:@"password" title:@"Password" valueTransformer:nil];
 		[basicFieldSection addFormField:[[[IBABooleanFormField alloc] initWithKeyPath:@"booleanSwitchValue" title:@"Switch"] autorelease]];
 		[basicFieldSection addFormField:[[[IBABooleanFormField alloc] initWithKeyPath:@"booleanCheckValue" title:@"Check" type:IBABooleanFormFieldTypeCheck] autorelease]];
