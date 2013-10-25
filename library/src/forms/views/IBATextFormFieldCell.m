@@ -32,6 +32,8 @@
 		self.textField = [[[UITextField alloc] initWithFrame:style.valueFrame] autorelease];
 		self.textField.autoresizingMask = style.valueAutoresizingMask;
 		self.textField.returnKeyType = UIReturnKeyNext;
+	        self.textField.clipsToBounds = YES;
+        	self.textField.layer.cornerRadius = 6.0f;
 		[self.cellView addSubview:self.textField];
 	}
 	
