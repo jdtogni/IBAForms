@@ -119,6 +119,10 @@
 	} else {
 		label = [[[UILabel alloc] initWithFrame:CGRectMake(0, 0, pickerView.bounds.size.width - 40, 44)] autorelease];
         if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
+            label.textColor = [UIColor whiteColor];
+            label.font = [UIFont boldSystemFontOfSize:12];
+            label.shadowColor = [UIColor blackColor];
+            label.shadowOffset = CGSizeMake(0, 1);
         } else {
             label.backgroundColor = [UIColor clearColor];
             label.shadowColor = [UIColor whiteColor];
