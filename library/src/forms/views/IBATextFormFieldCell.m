@@ -12,6 +12,8 @@
 // permissions and limitations under the License.
 //
 
+#import <QuartzCore/QuartzCore.h>
+
 #import "IBATextFormFieldCell.h"
 #import "IBAFormConstants.h"
 
