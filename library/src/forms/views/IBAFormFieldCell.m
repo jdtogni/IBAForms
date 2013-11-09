@@ -1,3 +1,4 @@
+
 //
 // Copyright 2010 Itty Bitty Apps Pty Ltd
 //
@@ -53,11 +54,11 @@
 		self.label = [[[UILabel alloc] initWithFrame:style.labelFrame] autorelease];
 		self.label.autoresizingMask = style.labelAutoresizingMask;
 		self.label.adjustsFontSizeToFitWidth = YES;
-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 60000
-		self.label.minimumScaleFactor = 10;
-#else
-		self.label.minimumFontSize = 10;
-#endif
+		if ([self.label respondsToSelector:@selector(setMinimumScaleFactor:)]) {
+		  self.label.minimumScaleFactor = 10;
+		} else {
+		  self.label.minimumFontSize = 10;
+		}
 		[self.cellView addSubview:self.label];
 
 		// set the style after the views have been created
