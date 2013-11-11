@@ -29,7 +29,6 @@
 - (void)dealloc {
 	IBA_RELEASE_SAFELY(cell_);
 	
-	[super dealloc];
 }
 
 - (void)updateCellContents {

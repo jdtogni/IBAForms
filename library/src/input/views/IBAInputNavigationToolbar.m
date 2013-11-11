@@ -19,7 +19,7 @@
 #define IBAInputNavigationToolbarPreviousTitle @"Previous"
 
 @interface IBAInputNavigationToolbar ()
-@property (nonatomic, retain) UIBarButtonItem *nextPreviousBarButtonItem;
+@property (nonatomic, strong) UIBarButtonItem *nextPreviousBarButtonItem;
 - (void)updateButtons;
 @end
 
@@ -37,7 +37,6 @@
 	IBA_RELEASE_SAFELY(nextPreviousButton_);
 	IBA_RELEASE_SAFELY(nextPreviousBarButtonItem_);
 	
-	[super dealloc];
 }
 
 
@@ -90,7 +89,7 @@
 		[barItems addObject:doneButton_];
 	}
 	
-	[barItems addObject:[[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil] autorelease]];
+	[barItems addObject:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil]];
 
 	if (self.displayNextPreviousButton) {
 		[barItems addObject:nextPreviousBarButtonItem_];

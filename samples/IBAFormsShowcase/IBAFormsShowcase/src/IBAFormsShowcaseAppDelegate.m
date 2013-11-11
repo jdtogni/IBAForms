@@ -27,28 +27,23 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
 
-	ShowcaseModel *showcaseModel = [[[ShowcaseModel alloc] init] autorelease];
+	ShowcaseModel *showcaseModel = [[ShowcaseModel alloc] init];
     showcaseModel.shouldAutoRotate = YES;
     showcaseModel.tableViewStyleGrouped = YES;
     showcaseModel.displayNavigationToolbar = YES;
     
-	ShowcaseFormDataSource *showcaseDataSource = [[[ShowcaseFormDataSource alloc] initWithModel:showcaseModel] autorelease];
-	ShowcaseController *showcaseController = [[[ShowcaseController alloc] initWithNibName:nil bundle:nil formDataSource:showcaseDataSource] autorelease];
+	ShowcaseFormDataSource *showcaseDataSource = [[ShowcaseFormDataSource alloc] initWithModel:showcaseModel];
+	ShowcaseController *showcaseController = [[ShowcaseController alloc] initWithNibName:nil bundle:nil formDataSource:showcaseDataSource];
 	[showcaseController setTitle:@"IBAForms Showcase"];
 	
-	UINavigationController *navController = [[[UINavigationController alloc] initWithRootViewController:showcaseController] autorelease];
+	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:showcaseController];
 	
-	[self setWindow:[[[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds] autorelease]];
+	[self setWindow:[[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds]];
 	[[self window] setRootViewController:navController];
 	[[self window] makeKeyAndVisible];
 	
     return YES;
 }
 
-- (void)dealloc {
-    [self setWindow:nil];
-	
-    [super dealloc];
-}
 
 @end

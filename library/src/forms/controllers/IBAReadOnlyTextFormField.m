@@ -23,7 +23,6 @@
 - (void)dealloc {
 	IBA_RELEASE_SAFELY(textFormFieldCell_);
 	
-	[super dealloc];
 }
 
 

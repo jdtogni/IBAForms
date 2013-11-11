@@ -28,7 +28,7 @@
 	formFieldCell.textField.autocorrectionType = UITextAutocorrectionTypeNo;
 	formFieldCell.textField.keyboardType = UIKeyboardTypeEmailAddress;
 
-	return [textFormField autorelease];
+	return textFormField;
 }
 
 + (IBATextFormField *)passwordTextFormFieldWithSection:(IBAFormSection *)section
@@ -41,7 +41,7 @@
 	IBATextFormFieldCell *formFieldCell = textFormField.textFormFieldCell;
 	formFieldCell.textField.secureTextEntry = YES;
 
-	return [textFormField autorelease];
+	return textFormField;
 }
 
 @end

@@ -33,7 +33,6 @@
 	IBA_RELEASE_SAFELY(headerView_);
 	IBA_RELEASE_SAFELY(footerView_);
 	
-	[super dealloc];
 }
 
 - (NSString *)description {

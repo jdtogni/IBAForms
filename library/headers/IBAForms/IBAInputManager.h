@@ -28,8 +28,8 @@
 }
 
 
-@property (nonatomic, retain) id<IBAInputRequestorDataSource> inputRequestorDataSource;
-@property (nonatomic, retain) IBAInputNavigationToolbar *inputNavigationToolbar;
+@property (nonatomic, strong) id<IBAInputRequestorDataSource> inputRequestorDataSource;
+@property (nonatomic, strong) IBAInputNavigationToolbar *inputNavigationToolbar;
 @property (nonatomic, assign, getter = isInputNavigationToolbarEnabled) BOOL inputNavigationToolbarEnabled;
 
 + (IBAInputManager *)sharedIBAInputManager;

@@ -16,7 +16,7 @@
 #import "IBACommon.h"
 
 @interface IBADateInputProvider ()
-@property (nonatomic, readonly) UIView *datePickerView;
+@property (weak, nonatomic, readonly) UIView *datePickerView;
 @property (nonatomic, readonly) UIDatePicker *datePicker;
 - (void)datePickerValueChanged;
 @end
@@ -35,7 +35,6 @@
 	IBA_RELEASE_SAFELY(datePickerView_);
 	IBA_RELEASE_SAFELY(datePicker_);
 	
-	[super dealloc];
 }
 
 - (id)init {

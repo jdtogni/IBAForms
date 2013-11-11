@@ -22,16 +22,16 @@
 - (void)loadView {
 	[super loadView];
 	
-	UIBarButtonItem *backButton = [[[UIBarButtonItem alloc] initWithTitle:@"Back"
+	UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back"
 																	style:UIBarButtonItemStyleBordered 
 																   target:nil 
-																   action:nil] autorelease];
+																   action:nil];
 	self.navigationItem.backBarButtonItem = backButton;
 	
-	UIView *view = [[[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
+	UIView *view = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 	[view setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight];
 	
-	UITableView *showcaseTableView = [[[UITableView alloc] initWithFrame:[view bounds] style:UITableViewStyleGrouped] autorelease];
+	UITableView *showcaseTableView = [[UITableView alloc] initWithFrame:[view bounds] style:UITableViewStyleGrouped];
 	[showcaseTableView setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight];
 	[self setTableView:showcaseTableView];
 	

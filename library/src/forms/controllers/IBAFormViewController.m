@@ -50,7 +50,6 @@
 	[self releaseViews];
 	IBA_RELEASE_SAFELY(formDataSource_);
 
-	[super dealloc];
 }
 
 - (void)releaseViews {
@@ -154,7 +153,7 @@
 - (void)setFormDataSource:(IBAFormDataSource *)dataSource {
 	if (dataSource != formDataSource_) {
 		IBAFormDataSource *oldDataSource = formDataSource_;
-		formDataSource_ = [dataSource retain];
+		formDataSource_ = dataSource;
 		IBA_RELEASE_SAFELY(oldDataSource);
 
 		self.tableView.dataSource = formDataSource_;

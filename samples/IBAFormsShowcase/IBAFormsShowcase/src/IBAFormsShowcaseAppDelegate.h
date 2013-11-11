@@ -15,6 +15,6 @@
 #import <UIKit/UIKit.h>
 
 @interface IBAFormsShowcaseAppDelegate : NSObject <UIApplicationDelegate>
-@property (nonatomic, retain) IBOutlet UIWindow *window;
+@property (nonatomic, strong) IBOutlet UIWindow *window;
 @end
 

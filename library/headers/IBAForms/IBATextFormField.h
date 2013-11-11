@@ -19,6 +19,6 @@
 	IBATextFormFieldCell *textFormFieldCell_;
 }
 
-@property (nonatomic, retain) IBATextFormFieldCell *textFormFieldCell;
+@property (nonatomic, strong) IBATextFormFieldCell *textFormFieldCell;
 
 @end

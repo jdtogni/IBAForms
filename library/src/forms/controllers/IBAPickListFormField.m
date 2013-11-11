@@ -28,7 +28,6 @@
 	IBA_RELEASE_SAFELY(pickListCell_);
 	IBA_RELEASE_SAFELY(pickListOptions_);
 
-	[super dealloc];
 }
 
 - (id)initWithKeyPath:(NSString *)keyPath title:(NSString *)title valueTransformer:(NSValueTransformer *)valueTransformer
@@ -46,7 +45,7 @@
 	NSString *value = nil;
 	
 	if (self.formFieldValue != nil) {
-		NSMutableArray *itemNames = [[[NSMutableArray alloc] init] autorelease];
+		NSMutableArray *itemNames = [[NSMutableArray alloc] init];
 
 		for (id<IBAPickListOption> item in [self pickListOptions]) {
 			NSString *itemName = [item name];
@@ -98,8 +97,8 @@
 
 @interface IBAPickListFormOption ()
 @property (nonatomic, copy) NSString *name;
-@property (nonatomic, retain) UIImage *iconImage;
-@property (nonatomic, retain) UIFont *font;
+@property (nonatomic, strong) UIImage *iconImage;
+@property (nonatomic, strong) UIFont *font;
 
 @end
 
@@ -114,7 +113,6 @@
 	IBA_RELEASE_SAFELY(iconImage_);
 	IBA_RELEASE_SAFELY(font_);
 	
-	[super dealloc];
 }
 
 - (id)initWithName:(NSString *)name iconImage:(UIImage *)iconImage font:(UIFont *)font {
@@ -134,7 +132,7 @@
 + (NSArray *)pickListOptionsForStrings:(NSArray *)optionNames font:(UIFont *)font {
 	NSMutableArray *options = [NSMutableArray array];
 	for (NSString *optionName in optionNames) {
-		[options addObject:[[[IBAPickListFormOption alloc] initWithName:optionName iconImage:nil font:font] autorelease]];
+		[options addObject:[[IBAPickListFormOption alloc] initWithName:optionName iconImage:nil font:font]];
 	}
 	
 	return options;
@@ -178,7 +176,6 @@
 - (void)dealloc {
 	IBA_RELEASE_SAFELY(pickListOptions_);
 
-	[super dealloc];
 }
 
 - (id)initWithPickListOptions:(NSArray *)pickListOptions {
@@ -199,7 +196,7 @@
 
 - (id)transformedValue:(id)value {
 	// Assume we're given a set of IBAPickListFormOptions and convert them to a set of NSStrings
-	NSMutableSet *optionNames = [[[NSMutableSet alloc] init] autorelease];
+	NSMutableSet *optionNames = [[NSMutableSet alloc] init];
 	for (IBAPickListFormOption *option in value) {
 		[optionNames addObject:[option name]];
 	}
@@ -209,7 +206,7 @@
 
 - (id)reverseTransformedValue:(id)value {
 	// Assume we're given a set of NSStrings and convert them to a set of IBAPickListFormOption
-	NSMutableSet *options = [[[NSMutableSet alloc] init] autorelease];
+	NSMutableSet *options = [[NSMutableSet alloc] init];
 	for (NSString *optionName in value) {
 		IBAPickListFormOption *option = [self optionWithName:optionName];
 		if (option != nil) {
@@ -239,7 +236,6 @@
 - (void)dealloc {
 	IBA_RELEASE_SAFELY(pickListOptions_);
 	
-	[super dealloc];
 }
 
 - (id)initWithPickListOptions:(NSArray *)pickListOptions {
@@ -270,7 +266,7 @@
 - (id)reverseTransformedValue:(id)value {
 	// Assume we're given an NSNumber representing an index in to pickListOptions and convert it to a set with a 
 	// single IBAPickListFormOption
-	NSMutableSet *options = [[[NSMutableSet alloc] init] autorelease];
+	NSMutableSet *options = [[NSMutableSet alloc] init];
 	int index = [(NSNumber *)value intValue];
 	if ((index >= 0) && (index < [self.pickListOptions count])) {
 		IBAPickListFormOption *option = [self.pickListOptions objectAtIndex:index];

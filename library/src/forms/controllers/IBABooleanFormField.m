@@ -30,7 +30,6 @@
 	IBA_RELEASE_SAFELY(switchCell_);
 	IBA_RELEASE_SAFELY(checkCell_);
 	
-	[super dealloc];
 }
 
 - (id)initWithKeyPath:(NSString *)keyPath title:(NSString *)title valueTransformer:(NSValueTransformer *)valueTransformer 

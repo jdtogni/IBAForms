@@ -24,9 +24,9 @@
 	CGRect keyboardFrame_;
 }
 
-@property (nonatomic, retain) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) IBOutlet UITableView *tableView;
 @property (nonatomic, readonly) CGRect tableViewOriginalFrame;
-@property (nonatomic, retain) IBAFormDataSource *formDataSource;
+@property (nonatomic, strong) IBAFormDataSource *formDataSource;
 
 
 // Designated Initializer.

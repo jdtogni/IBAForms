@@ -34,7 +34,6 @@
 	[userInfo setValue:self forKey:IBAFormFieldKey];
 
 	[[NSNotificationCenter defaultCenter] postNotificationName:IBAInputRequestorFormFieldActivated object:self userInfo:userInfo];
-	[userInfo release];
 	
 	if ([self hasDetailViewController]) {
 		// If the form field has a detailViewController, then it should be displayed, and the form field should
@@ -51,7 +50,6 @@
 	[userInfo setValue:self forKey:IBAFormFieldKey];
 
 	[[NSNotificationCenter defaultCenter] postNotificationName:IBAInputRequestorFormFieldDeactivated object:self userInfo:userInfo];
-	[userInfo release];
 	
 	[self.cell deactivate];
 	

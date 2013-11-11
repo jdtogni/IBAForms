@@ -34,7 +34,6 @@
 	IBA_RELEASE_SAFELY(formFieldStyle_);
 	IBA_RELEASE_SAFELY(valueTransformer_);
 
-	[super dealloc];
 }
 
 - (id)initWithKeyPath:(NSString*)keyPath title:(NSString*)title valueTransformer:(NSValueTransformer *)valueTransformer {
@@ -77,7 +76,7 @@
 - (void)setFormFieldStyle:(IBAFormFieldStyle *)formFieldStyle {
 	if (formFieldStyle != formFieldStyle_) {
 		IBAFormFieldStyle *oldStyle = formFieldStyle_;
-		formFieldStyle_ = [formFieldStyle retain];
+		formFieldStyle_ = formFieldStyle;
 		IBA_RELEASE_SAFELY(oldStyle);
 
 		self.cell.formFieldStyle = formFieldStyle;
@@ -87,7 +86,7 @@
 - (void)setTitle:(NSString *)title {
 	if (![title isEqualToString:title_]) {
 		NSString *oldTitle = title_;
-		title_ = [title copyWithZone:[self zone]];
+		title_ = [title copyWithZone:nil];
 		IBA_RELEASE_SAFELY(oldTitle);
 
 		[self updateCellContents];

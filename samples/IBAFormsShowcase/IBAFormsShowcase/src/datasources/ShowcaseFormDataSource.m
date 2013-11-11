@@ -31,12 +31,12 @@
 - (id)initWithModel:(id)aModel {
 	if ((self = [super initWithModel:aModel])) {
 		IBAFormSection *displayOptionsSection = [self addSectionWithHeaderTitle:@"Display Options" footerTitle:nil];
-		displayOptionsSection.formFieldStyle = [[[ShowcaseFieldStyle alloc] init] autorelease];
+		displayOptionsSection.formFieldStyle = [[ShowcaseFieldStyle alloc] init];
 		
-		[displayOptionsSection addFormField:[[[IBABooleanFormField alloc] initWithKeyPath:@"shouldAutoRotate" title:@"Autorotate"] autorelease]];
-		[displayOptionsSection addFormField:[[[IBABooleanFormField alloc] initWithKeyPath:@"tableViewStyleGrouped" title:@"Group"] autorelease]];
-		[displayOptionsSection addFormField:[[[IBABooleanFormField alloc] initWithKeyPath:@"modalPresentation" title:@"Modal"] autorelease]];
-        [displayOptionsSection addFormField:[[[IBABooleanFormField alloc] initWithKeyPath:@"displayNavigationToolbar" title:@"Nav Toolbar"] autorelease]];
+		[displayOptionsSection addFormField:[[IBABooleanFormField alloc] initWithKeyPath:@"shouldAutoRotate" title:@"Autorotate"]];
+		[displayOptionsSection addFormField:[[IBABooleanFormField alloc] initWithKeyPath:@"tableViewStyleGrouped" title:@"Group"]];
+		[displayOptionsSection addFormField:[[IBABooleanFormField alloc] initWithKeyPath:@"modalPresentation" title:@"Modal"]];
+        [displayOptionsSection addFormField:[[IBABooleanFormField alloc] initWithKeyPath:@"displayNavigationToolbar" title:@"Nav Toolbar"]];
 
 		NSArray *modalPresentationStyleOptions = [IBAPickListFormOption pickListOptionsForStrings:[NSArray arrayWithObjects:
 																									@"Full Screen", 
@@ -44,21 +44,21 @@
 																									@"Form Sheet", 
 																									@"Current Context",
 																									nil]];	
-		IBASingleIndexTransformer *modalPresentationStyleTransformer = [[[IBASingleIndexTransformer alloc] initWithPickListOptions:modalPresentationStyleOptions] autorelease];
-		[displayOptionsSection addFormField:[[[IBAPickListFormField alloc] initWithKeyPath:@"modalPresentationStyle"
+		IBASingleIndexTransformer *modalPresentationStyleTransformer = [[IBASingleIndexTransformer alloc] initWithPickListOptions:modalPresentationStyleOptions];
+		[displayOptionsSection addFormField:[[IBAPickListFormField alloc] initWithKeyPath:@"modalPresentationStyle"
 																					 title:@"Modal Style"
 																		  valueTransformer:modalPresentationStyleTransformer
 																			 selectionMode:IBAPickListSelectionModeSingle
-																				   options:modalPresentationStyleOptions] autorelease]];	
+																				   options:modalPresentationStyleOptions]];	
 		
 		
 		IBAFormSection *buttonSection = [self addSectionWithHeaderTitle:nil footerTitle:nil];
-		buttonSection.formFieldStyle = [[[ShowcaseButtonStyle alloc] init] autorelease];;
-		[buttonSection addFormField:[[[IBAButtonFormField alloc] initWithTitle:@"Show Sample Form"
+		buttonSection.formFieldStyle = [[ShowcaseButtonStyle alloc] init];;
+		[buttonSection addFormField:[[IBAButtonFormField alloc] initWithTitle:@"Show Sample Form"
 																		  icon:nil
 																executionBlock:^{
 																	[self displaySampleForm];
-																}] autorelease]];
+																}]];
     }
 	
     return self;
@@ -67,13 +67,13 @@
 - (void)displaySampleForm {
 	ShowcaseModel *showcaseModel = [self model];
 	
-	NSMutableDictionary *sampleFormModel = [[[NSMutableDictionary alloc] init] autorelease];
+	NSMutableDictionary *sampleFormModel = [[NSMutableDictionary alloc] init];
   
 	// Values set on the model will be reflected in the form fields.
 	[sampleFormModel setObject:@"A value contained in the model" forKey:@"readOnlyText"];
   
-	SampleFormDataSource *sampleFormDataSource = [[[SampleFormDataSource alloc] initWithModel:sampleFormModel] autorelease];
-	SampleFormController *sampleFormController = [[[SampleFormController alloc] initWithNibName:nil bundle:nil formDataSource:sampleFormDataSource] autorelease];
+	SampleFormDataSource *sampleFormDataSource = [[SampleFormDataSource alloc] initWithModel:sampleFormModel];
+	SampleFormController *sampleFormController = [[SampleFormController alloc] initWithNibName:nil bundle:nil formDataSource:sampleFormDataSource];
 	sampleFormController.title = @"Sample Form";
 	sampleFormController.shouldAutoRotate = showcaseModel.shouldAutoRotate;
 	sampleFormController.tableViewStyle = showcaseModel.tableViewStyleGrouped ? UITableViewStyleGrouped : UITableViewStylePlain;
@@ -82,11 +82,11 @@
     
 	UIViewController *rootViewController = [[[UIApplication sharedApplication] keyWindow] rootViewController];
 	if (showcaseModel.modalPresentation) {
-		UIBarButtonItem *doneButton = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone 
+		UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone 
 																					 target:self 
-																					 action:@selector(dismissSampleForm)] autorelease];
+																					 action:@selector(dismissSampleForm)];
 		sampleFormController.navigationItem.rightBarButtonItem = doneButton;
-		UINavigationController *formNavigationController = [[[UINavigationController alloc] initWithRootViewController:sampleFormController] autorelease];
+		UINavigationController *formNavigationController = [[UINavigationController alloc] initWithRootViewController:sampleFormController];
 		formNavigationController.modalPresentationStyle = showcaseModel.modalPresentationStyle;
 		[rootViewController presentModalViewController:formNavigationController animated:YES];
 	} else {

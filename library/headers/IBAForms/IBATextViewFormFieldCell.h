@@ -19,6 +19,6 @@
 	UITextView *textField_;
 }
 
-@property (nonatomic, retain) UITextView *textField;
+@property (nonatomic, strong) UITextView *textField;
 
 @end

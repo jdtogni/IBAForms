@@ -38,20 +38,19 @@
 	IBA_RELEASE_SAFELY(label_);
 	IBA_RELEASE_SAFELY(formFieldStyle_);
 	
-	[super dealloc];
 }
 
 - (id)initWithFormFieldStyle:(IBAFormFieldStyle *)style reuseIdentifier:(NSString *)reuseIdentifier {
     if ((self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier])) {
 		self.selectionStyle = UITableViewCellSelectionStyleNone;
 
-		self.cellView = [[[UIView alloc] initWithFrame:self.contentView.bounds] autorelease];
+		self.cellView = [[UIView alloc] initWithFrame:self.contentView.bounds];
 		self.cellView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 		self.cellView.userInteractionEnabled = YES;
 		[self.contentView addSubview:self.cellView];
 
 		// Create a label
-		self.label = [[[UILabel alloc] initWithFrame:style.labelFrame] autorelease];
+		self.label = [[UILabel alloc] initWithFrame:style.labelFrame];
 		self.label.autoresizingMask = style.labelAutoresizingMask;
 		self.label.adjustsFontSizeToFitWidth = YES;
 		if ([self.label respondsToSelector:@selector(setMinimumScaleFactor:)]) {
@@ -82,7 +81,7 @@
 - (void)setFormFieldStyle:(IBAFormFieldStyle *)style {
 	if (style != formFieldStyle_) {
 		IBAFormFieldStyle *oldStyle = formFieldStyle_;
-		formFieldStyle_ = [style retain];
+		formFieldStyle_ = style;
 		IBA_RELEASE_SAFELY(oldStyle);
 		
 		self.styleApplied = NO;

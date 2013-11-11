@@ -28,7 +28,6 @@
 	IBA_RELEASE_SAFELY(dateFormatter_);
 	IBA_RELEASE_SAFELY(defaultValue_);
 
-	[super dealloc];
 }
 
 
@@ -40,7 +39,7 @@
 
 		self.dateFormatter = dateFormatter;
 		if (self.dateFormatter == nil) {
-			self.dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
+			self.dateFormatter = [[NSDateFormatter alloc] init];
 			[self.dateFormatter setDateStyle:NSDateFormatterMediumStyle];
 			[self.dateFormatter setTimeStyle:NSDateFormatterNoStyle];
 			[dateFormatter setDateFormat:@"EEE d MMM yyyy"];

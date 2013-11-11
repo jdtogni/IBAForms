@@ -22,7 +22,6 @@
 - (void)dealloc {
 	IBA_RELEASE_SAFELY(switchControl_);
 
-	[super dealloc];
 }
 
 

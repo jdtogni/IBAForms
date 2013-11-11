@@ -14,7 +14,12 @@
 
 #import <Foundation/Foundation.h>
 
+#if __has_feature(objc_arc)
+#define IBA_RELEASE_SAFELY(__POINTER) { __POINTER = nil; }
+#else
 #define IBA_RELEASE_SAFELY(__POINTER) { [__POINTER release]; __POINTER = nil; }
+#endif
+
 #define IBACGPointTranslate(point, dx, dy) CGPointMake(point.x + dx, point.y + dy)
 
 #define IBALogRect(RECT) NSLog(@"%s: (%0.0f, %0.0f) %0.0f x %0.0f",\

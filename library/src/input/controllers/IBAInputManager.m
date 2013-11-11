@@ -63,7 +63,6 @@
 	IBA_RELEASE_SAFELY(activeInputRequestor_);
 	IBA_RELEASE_SAFELY(inputNavigationToolbar_);
 	
-	[super dealloc];
 }
 
 - (id)init {
@@ -81,25 +80,25 @@
 		// Setup some default input providers
 		
 		// Text
-		[self registerInputProvider:[[[IBATextInputProvider alloc] init] autorelease]
+		[self registerInputProvider:[[IBATextInputProvider alloc] init]
 						forDataType:IBAInputDataTypeText];
 		// Date
-		[self registerInputProvider:[[[IBADateInputProvider alloc] init] autorelease]
+		[self registerInputProvider:[[IBADateInputProvider alloc] init]
 						forDataType:IBAInputDataTypeDate];
 		// Time
-		[self registerInputProvider:[[[IBADateInputProvider alloc] initWithDatePickerMode:UIDatePickerModeTime] autorelease] 
+		[self registerInputProvider:[[IBADateInputProvider alloc] initWithDatePickerMode:UIDatePickerModeTime] 
 						forDataType:IBAInputDataTypeTime];
 		
 		// Date & Time
-		[self registerInputProvider:[[[IBADateInputProvider alloc] initWithDatePickerMode:UIDatePickerModeDateAndTime] autorelease]
+		[self registerInputProvider:[[IBADateInputProvider alloc] initWithDatePickerMode:UIDatePickerModeDateAndTime]
 						forDataType:IBAInputDataTypeDateTime];
 		
 		// Single Picklist
-		[self registerInputProvider:[[[IBASinglePickListInputProvider alloc] init] autorelease]
+		[self registerInputProvider:[[IBASinglePickListInputProvider alloc] init]
 						forDataType:IBAInputDataTypePickListSingle];
 		
 		// Multiple Picklist
-		[self registerInputProvider:[[[IBAMultiplePickListInputProvider alloc] init] autorelease]
+		[self registerInputProvider:[[IBAMultiplePickListInputProvider alloc] init]
 						forDataType:IBAInputDataTypePickListMultiple];
     
 	}
@@ -121,11 +120,10 @@
 		}
 		
 		oldInputProvider.inputRequestor = nil;
-		[activeInputRequestor_ release];
 	}
 	
 	if (inputRequestor != nil)  {
-		activeInputRequestor_ = [inputRequestor retain];
+		activeInputRequestor_ = inputRequestor;
 
 		id<IBAInputProvider>newInputProvider = [self inputProviderForRequestor:activeInputRequestor_];
 		[self displayInputProvider:newInputProvider forInputRequestor:inputRequestor];

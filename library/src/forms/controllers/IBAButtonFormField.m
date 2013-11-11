@@ -15,7 +15,7 @@
 #import "IBAButtonFormField.h"
 
 @interface IBAButtonFormField ()
-@property (nonatomic, retain) UIImage *iconImage;
+@property (nonatomic, strong) UIImage *iconImage;
 @property (nonatomic, copy) IBAButtonFormFieldBlock executionBlock;
 @end
 
@@ -31,7 +31,6 @@
 	IBA_RELEASE_SAFELY(executionBlock_);
 	IBA_RELEASE_SAFELY(detailViewController_);
 
-	[super dealloc];
 }
 
 
@@ -47,7 +46,7 @@
 	if ((self = [super initWithKeyPath:nil title:aTitle])) {
 		self.iconImage = anIconImage;
 		self.executionBlock = aBlock;
-		detailViewController_ = [viewController retain];
+		detailViewController_ = viewController;
 	}
 
 	return self;
@@ -68,7 +67,6 @@
 			imageView.center = imageCenter;
 
 			[cell_.cellView addSubview:imageView];
-			[imageView release];
 		}
 	}
 

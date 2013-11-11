@@ -41,7 +41,6 @@
 	IBA_RELEASE_SAFELY(pickerView_);
 	IBA_RELEASE_SAFELY(providerView_);
 
-	[super dealloc];
 }
 
 - (id)init {
@@ -117,7 +116,7 @@
 	if ((view != nil) && ([view isKindOfClass:[UILabel class]])){
 		label = (UILabel *)view;
 	} else {
-		label = [[[UILabel alloc] initWithFrame:CGRectMake(0, 0, pickerView.bounds.size.width - 40, 44)] autorelease];
+		label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, pickerView.bounds.size.width - 40, 44)];
         if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
             label.textColor = [UIColor whiteColor];
             label.font = [UIFont boldSystemFontOfSize:12];

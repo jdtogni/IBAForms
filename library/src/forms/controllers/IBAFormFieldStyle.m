@@ -44,7 +44,6 @@
 	
 	IBA_RELEASE_SAFELY(activeColor_);
 
-	[super dealloc];
 }
 
 

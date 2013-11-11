@@ -35,21 +35,21 @@
     UITextAutocapitalizationType autocapitalizationType_;
 }
 
-@property (nonatomic, retain) UIColor *labelTextColor;
-@property (nonatomic, retain) UIColor *labelBackgroundColor;
-@property (nonatomic, retain) UIFont *labelFont;
+@property (nonatomic, strong) UIColor *labelTextColor;
+@property (nonatomic, strong) UIColor *labelBackgroundColor;
+@property (nonatomic, strong) UIFont *labelFont;
 @property (nonatomic, assign) CGRect labelFrame;
 @property (nonatomic, assign) UITextAlignment labelTextAlignment;
 @property (nonatomic, assign) UIViewAutoresizing labelAutoresizingMask;
 
-@property (nonatomic, retain) UIColor *valueTextColor;
-@property (nonatomic, retain) UIColor *valueBackgroundColor;
-@property (nonatomic, retain) UIFont *valueFont;
+@property (nonatomic, strong) UIColor *valueTextColor;
+@property (nonatomic, strong) UIColor *valueBackgroundColor;
+@property (nonatomic, strong) UIFont *valueFont;
 @property (nonatomic, assign) CGRect valueFrame;
 @property (nonatomic, assign) UITextAlignment valueTextAlignment;
 @property (nonatomic, assign) UIViewAutoresizing valueAutoresizingMask;
 
-@property (nonatomic, retain) UIColor *activeColor;
+@property (nonatomic, strong) UIColor *activeColor;
 
 @property (nonatomic, assign) UIKeyboardType keyboardType;
 @property (nonatomic, assign) UITextAutocapitalizationType autocapitalizationType;

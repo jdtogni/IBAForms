@@ -31,12 +31,11 @@
 	IBA_RELEASE_SAFELY(model_);
 	IBA_RELEASE_SAFELY(formFieldStyle_);
 	
-	[super dealloc];
 }
 
 - (id)initWithModel:(id)model {
 	if ((self = [super init])) {
-		model_ = [model retain];
+		model_ = model;
 		sections_ = [[NSMutableArray alloc] init];
 		formFieldStyle_ = [[IBAFormFieldStyle alloc] init];
 	}
@@ -150,8 +149,8 @@
 }
 
 - (IBAFormSection *)addSectionWithHeaderTitle:(NSString *)headerTitle footerTitle:(NSString *)footerTitle {
-	IBAFormSection *newSection = [[[IBAFormSection alloc] initWithHeaderTitle:headerTitle
-																  footerTitle:footerTitle] autorelease];
+	IBAFormSection *newSection = [[IBAFormSection alloc] initWithHeaderTitle:headerTitle
+																  footerTitle:footerTitle];
 	[self addSection:newSection];
 	
 	return newSection;

@@ -24,14 +24,13 @@
 - (void)dealloc {
 	IBA_RELEASE_SAFELY(textField_);
 	
-	[super dealloc];
 }
 
 
 - (id)initWithFormFieldStyle:(IBAFormFieldStyle *)style reuseIdentifier:(NSString *)reuseIdentifier {
     if ((self = [super initWithFormFieldStyle:style reuseIdentifier:reuseIdentifier])) {
 		// Create the text field for data entry
-		self.textField = [[[UITextField alloc] initWithFrame:style.valueFrame] autorelease];
+		self.textField = [[UITextField alloc] initWithFrame:style.valueFrame];
 		self.textField.autoresizingMask = style.valueAutoresizingMask;
 		self.textField.returnKeyType = UIReturnKeyNext;
 	        self.textField.clipsToBounds = YES;
